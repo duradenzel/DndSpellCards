@@ -6,16 +6,18 @@ using System.Threading.Tasks;
 
 namespace DndSpellCards
 {
-    internal class Spell
+    public class Spell
     {
-        public string spellName { get; set; }
-        public string spellDescription { get; set; }
-        public int spellLevel { get; set; }
-        public string spellRange { get; set; }
+        public string name { get; }
+        public string description { get; }
+        public int level { get; }
+        public string range { get; }
 
-        public string spellDuration { get; set; }
+        public string duration { get;}
 
-        public bool spellRecoveredAtShortRest { get; set; }
+        public string? damage { get;}
+
+        public bool recoveredAtShortRest { get;}
 
         private MagicSchool magicSchool;
         private ResourceCost resourceCost;
@@ -41,16 +43,17 @@ namespace DndSpellCards
         }
 
         
-        public Spell(string _name, string _desc,int _level,string _range, MagicSchool _school, string _duration, ResourceCost _cost, bool _recovery)
+        public Spell(string _name, string _desc,int _level,string _range, MagicSchool _school, string _duration,string _damage, ResourceCost _cost, bool _recovery)
         {
-            this.spellName = _name;
-            this.spellDescription = _desc;
-            this.spellLevel = _level;
-            this.spellRange = _range;
-            this.spellDuration = _duration;
+            this.name = _name;
+            this.description = _desc;
+            this.level = _level;
+            this.range = _range;
+            this.duration = _duration;
+            this.damage = _damage;
             this.magicSchool = _school;
             this.resourceCost = _cost;
-            this.spellRecoveredAtShortRest = _recovery;
+            this.recoveredAtShortRest = _recovery;
             
         }
     }
